@@ -58,3 +58,10 @@ run it like this:
 ## Source
 
 Sieve of Eratosthenes at Wikipedia [http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+
+
+###### Solutions I Can Think Of
+
+1. Create an array of the range up to the limit, double loop through it taking each successive number as the "current sieve", and use that to eliminate non-primes.
+
+2. Iterate throught a range of numbers up to the limit, and add the first number to a "primes" array. 

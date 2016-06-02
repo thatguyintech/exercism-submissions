@@ -1,22 +1,14 @@
 class Sieve
     def initialize(limit)
-        @numbers = (1..limit).to_a
-        @limit = limit
+        @range = (2..limit).to_a
+        @primes = []
     end
 
     def primes
-        return [] if @numbers.size <= 1
-        @numbers -= [1]
-        @numbers.each do |sieve|
-            @numbers.each do |number|
-                unless sieve == number
-                    if number % sieve == 0
-                        @numbers -= [number]
-                    end
-                end
-            end
+        while current_sieve = @range.shift
+            @primes << current_sieve
+            @range.reject! {|number| number % current_sieve == 0}
         end
-
-        @numbers
+        @primes
     end
 end
